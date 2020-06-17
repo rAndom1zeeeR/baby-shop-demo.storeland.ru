@@ -1728,38 +1728,38 @@ function startOrder(){
   return false;
 }
 
-// Функция + - для товаров
+// Функция + - для товара
 function quantity() {
-//Regulator Up копки + в карточке товара при добавлении в корзину
-qty_plus.onclick = function() {
-  var 
-    quantity = $(this).parent().find('.quantity, .cartqty'),
-    currentVal = parseInt(quantity.val());
-  if (!isNaN(currentVal)){
-    quantity.val(currentVal + 1);
-    quantity.trigger('keyup');
-    quantity.trigger('change');
-  }
-  return false;
-};
-//Regulator Down копки - в карточке товара при добавлении в корзину
-qty_minus.onclick = function() {
-  var 
-    quantity = $(this).parent().find('.quantity, .cartqty'),
-    currentVal = parseInt(quantity.val());
-  if (!isNaN(currentVal) && !(currentVal <= 1) ){
-    quantity.val(currentVal - 1);
-    quantity.trigger('keyup');
-    quantity.trigger('change');
-  }
-  return false;
-};
-// Если вводят 0 то заменяем на 1
-$('.qty-wrap .quantity, .cartqty').change(function(){
-  if($(this).val() < 1){
-    $(this).val(1); 
-  }
-});
+  //Regulator Up копки + в карточке товара при добавлении в корзину
+  $('.qty-plus').off('click').click(function(){
+    var
+      quantity = $(this).parent().find('.quantity, .cartqty'),
+      currentVal = parseInt(quantity.val());
+    if (!isNaN(currentVal)){
+      quantity.val(currentVal + 1);
+      quantity.trigger('keyup');
+      quantity.trigger('change');
+    }
+    return false;
+  });
+  //Regulator Down копки - в карточке товара при добавлении в корзину
+  $('.qty-minus').off('click').click(function(){
+    var
+      quantity = $(this).parent().find('.quantity, .cartqty'),
+      currentVal = parseInt(quantity.val());
+    if (!isNaN(currentVal)){
+      quantity.val(currentVal - 1);
+      quantity.trigger('keyup');
+      quantity.trigger('change');
+    }
+    return false;
+  });
+  // Если вводят 0 то заменяем на 1
+  $('.qty .quantity, .cartqty').change(function(){
+    if($(this).val() < 1){
+      $(this).val(1);
+    }
+  });
 }
 
 // Скрипты для карточки товара и Фильтры и Отзывы
