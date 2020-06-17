@@ -1733,27 +1733,29 @@ function quantity() {
 //Regulator Up копки + в карточке товара при добавлении в корзину
 qty_plus.onclick = function() {
   var 
-    quantity = $(this).parent().find('.quantity'),
+    quantity = $(this).parent().find('.quantity, .cartqty'),
     currentVal = parseInt(quantity.val());
   if (!isNaN(currentVal)){
     quantity.val(currentVal + 1);
     quantity.trigger('keyup');
+    quantity.trigger('change');
   }
   return false;
 };
 //Regulator Down копки - в карточке товара при добавлении в корзину
 qty_minus.onclick = function() {
   var 
-    quantity = $(this).parent().find('.quantity'),
+    quantity = $(this).parent().find('.quantity, .cartqty'),
     currentVal = parseInt(quantity.val());
   if (!isNaN(currentVal) && !(currentVal <= 1) ){
     quantity.val(currentVal - 1);
     quantity.trigger('keyup');
+    quantity.trigger('change');
   }
   return false;
 };
 // Если вводят 0 то заменяем на 1
-$('.qty-wrap .quantity').change(function(){
+$('.qty-wrap .quantity, .cartqty').change(function(){
   if($(this).val() < 1){
     $(this).val(1); 
   }
@@ -2190,7 +2192,7 @@ function removeFromCartAll(e){
 
 // Корзина
 function ajaxnewqty(){
-  $('.cartqty').change(function(){
+  $('.cartqty').change($.debounce(300, function(){
     s = $(this);
     id = $(this).closest('tr').data('id');
     qty = $(this).val();
@@ -2224,7 +2226,8 @@ function ajaxnewqty(){
         }
       }
     })
-  })
+  }))
+  quantity()
 }
 
 // Удаление товара из корзины
