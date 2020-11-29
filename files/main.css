@@ -502,12 +502,17 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 .social-links {display: block;margin: 30px auto;}
 .social-links a {display: inline-block;background-color: #80b5e1;width: 40px;height: 40px;line-height: 40px;font-size: 21px;color: #fff;text-align: center;margin: 0 5px 5px 0;text-indent: 0;-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;}
 .social-links a span {display: none;}
+.social-links a svg {display: inline-block;vertical-align: middle;width: 20px;height: 20px;fill: #ffffff;}
 .social-links .facebook:hover {background-color: #3b5998;}
 .social-links .twitter:hover {background-color: #1da1f2;}
 .social-links .odnoklassniki:hover {background-color: #f2720c;}
 .social-links .vk:hover {background-color: #507299;}
 .social-links .instagram:hover {background-color: #262626;}
-.social-links .youtube:hover {background-color: #e62117;}
+.social-links .youtube:hover {background-color: #FF0000;}
+.social-links .whatsapp:hover {background-color: #43d854;}
+.social-links .telegram:hover {background-color: #2ca5e0;}
+.social-links .tiktok:hover {background-color: #000000;}
+.social-links .viber:hover {background-color: #665CAC;}
 /* Обратный звонок */
 #footer .callbackForm {padding: 0;text-align: center;}
 #footer .callbackForm .callback-input {margin-bottom: 15px;}
