@@ -522,21 +522,11 @@ label.invalidInput {color: #E80636;font-size: 90%;}
 #footer .footer-bottom {position: relative;background-color: #d9d9d9;padding: 15px 0;text-align: center;z-index: 1;overflow: hidden;}
 #footer .footer-bottom .copyright {float: left;font-size: 12px;line-height: 16px;text-align: left;}
 /* Способы оплаты */
-#payment {float: right;}
-#payment a {display: block;line-height: 48px;}
-#payment a:hover {text-decoration: none;}
-#payment span {display: inline-block;vertical-align: middle;width: 40px;height: 27px;margin-right: 10px;cursor: pointer;background: url("{ASSETS_IMAGES_PATH}payment.png?design=kids") no-repeat;}
-#payment span:nth-child(5n) {clear: both;}
-#payment span:hover {background-position-y: -33px;}
-#payment .sber {width: 26px;background-position: 0 0;}
-#payment .visa {width: 69px;background-position: -34px 0;}
-#payment .mastercard {width: 43px;background-position: -112px 0;}
-#payment .maestro {width: 43px;background-position: -162px 0;}
-#payment .yandex {width: 18px;background-position: -215px 0;}
-#payment .webmoney {width: 26px;background-position: -242px 0;}
-#payment .rbk {width: 26px;background-position: -277px 0;}
-#payment .sms {width: 33px;background-position: -312px 0;}
-#payment .qiwi {width: 24px;background-position: -353px 0;}
+.payments-method {float: right;}
+.payments-method a {display: block;}
+.payments-method svg {margin: 5px;width: 40px;height: 40px;transition: fill .3s ease;display: inline-block;vertical-align: middle;-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter: grayscale(100%);filter: grayscale(100%);filter: gray;transition: all 0.3s ease;}
+.payments-method svg:hover {-webkit-filter: grayscale(0);-moz-filter: grayscale(0%);-ms-filter: grayscale(0%);-o-filter: grayscale(0%);filter: grayscale(0%);filter: none;}
+
 
 /*** Хлебные крошки ***/
 #breadcrumbs {position: relative;background-color: #f5f6f7;}
